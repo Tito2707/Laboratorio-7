@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Biblioteca</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <h1>Sistema de Gestión de Biblioteca</h1>
+    
+    <!-- Sección de Libros -->
+    <div class="container">
+        <div class="section">
+            <h2>Gestión de Libros</h2>
+            <div class="form-group">
+                <input type="text" id="nuevoLibroTitulo" placeholder="Título" required>
+                <input type="text" id="nuevoLibroAutor" placeholder="Autor" required>
+                <input type="number" id="nuevoLibroAno" placeholder="Año" required>
+                <button onclick="agregarNuevoLibro()">Agregar Libro</button>
+                <div id="libroError" class="error"></div>
+            </div>
+            <table id="tablaLibros">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Año</th>
+                        <th>Disponible</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaLibros"></tbody>
+            </table>
+        </div>
+        
+        <!-- Sección de Usuarios -->
+        <div class="section">
+            <h2>Gestión de Usuarios</h2>
+            <div class="form-group">
+                <input type="text" id="nuevoUsuarioNombre" placeholder="Nombre" required>
+                <input type="email" id="nuevoUsuarioEmail" placeholder="Email" required>
+                <button onclick="agregarNuevoUsuario()">Agregar Usuario</button>
+                <div id="usuarioError" class="error"></div>
+            </div>
+            <table id="tablaUsuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Libros Prestados</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaUsuarios"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Sección de Préstamos -->
+    <div class="section">
+        <h2>Gestión de Préstamos</h2>
+        <div class="form-group">
+            <select id="prestamoLibro">
+                <option value="">Seleccionar Libro</option>
+            </select>
+            <select id="prestamoUsuario">
+                <option value="">Seleccionar Usuario</option>
+            </select>
+            <button onclick="realizarPrestamo()">Realizar Préstamo</button>
+            <div id="prestamoError" class="error"></div>
+        </div>
+        <table id="tablaPrestamos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Libro</th>
+                    <th>Usuario</th>
+                    <th>Fecha Préstamo</th>
+                    <th>Fecha Devolución</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="listaPrestamos"></tbody>
+        </table>
+    </div>
+
+    <script src="Lab.js"></script>
+</body>
+</html>
